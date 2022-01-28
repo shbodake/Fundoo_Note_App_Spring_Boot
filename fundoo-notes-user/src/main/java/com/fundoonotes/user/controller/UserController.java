@@ -34,13 +34,13 @@ import com.fundoonotes.user.service.UserService;
 @RequestMapping("/user")
 public class UserController {
 
-	/**
+    /**
      * AutoWiring UserInterace to Dependency Injection
      */
 	@Autowired
 	private UserService userService;
 
-	/**
+    /**
      * API for register the user-fundoonotes
      * @param User
      * @return : ResponseEntity of registered user-fundoonotes
@@ -52,7 +52,7 @@ public class UserController {
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.CREATED);
 	}
 
-	/**
+    /**
      * API for generate token of user-fundoonotes
      * @param User
      * @return : ResponseEntity of generated token of user-fundoonotes
@@ -65,18 +65,11 @@ public class UserController {
 
 	}
 	
-	/**
+    /**
      * API for gettig user of user-fundoonotes
      * @param User
      * @return : ResponseEntity of user of user-fundoonotes
      */
-	/*
-	 * @GetMapping("/getUser/{id}") public User generateUser(@PathVariable("id")
-	 * long id,@RequestHeader String token) { User userDetailUser =
-	 * userService.generateUser(id,token); //ResponseDTO responseDTO = new
-	 * ResponseDTO("Get User data", userDetailUser, HttpStatus.ACCEPTED); return
-	 * userDetailUser; }
-	 */
 	@GetMapping("/getUser/{id}")
 	public User getUser(@PathVariable("id") long id) {
 		User userDetailUser = userService.getUser(id);
@@ -84,7 +77,7 @@ public class UserController {
 		return userDetailUser;
 	}
 
-	/**
+    /**
      * API for update of user-fundoonotes
      * @param User
      * @return : ResponseEntity of update of user-fundoonotes
@@ -96,7 +89,7 @@ public class UserController {
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.CREATED);
 	}
 
-	/**
+    /**
      * API for delete user of user-fundoonotes
      * @param User
      * @return : ResponseEntity of deleted user of user-fundoonotes
