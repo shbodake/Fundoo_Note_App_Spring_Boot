@@ -4,6 +4,6 @@ import com.project.fundoonotes.dto.ResponseTemplateDto;
 
 public interface IResponseService {
 
-	ResponseTemplateDto getLablesAndNotesWithUser(long id);
+	ResponseTemplateDto getLablesAndNotesWithUser(int id);
 
 }

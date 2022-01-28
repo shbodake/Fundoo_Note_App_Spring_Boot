@@ -43,7 +43,7 @@ public class ExceptionHandlerClass {
 	 * @return : ResponseEntity of ResponseDTO object of Custom exception
 	 */
 	@ExceptionHandler(UserException.class)
-	public ResponseEntity<ResponseDTO> handlerAddressBookCustomException(UserException flipkart) {
+	public ResponseEntity<ResponseDTO> handlerUserException(UserException flipkart) {
 		ResponseDTO responseDTO = new ResponseDTO(message, flipkart.getMessage(), HttpStatus.BAD_REQUEST);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}

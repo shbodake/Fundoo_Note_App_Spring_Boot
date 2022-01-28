@@ -12,6 +12,7 @@ public interface IUserService {
 	 */
 	String generateToken(User user);
 	User createUser(User user);
-	User generateUser(long id);
+	User generateUser(long id,String token);
+	User getUser(long id);
 
 }

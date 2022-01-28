@@ -36,10 +36,10 @@ public class Note {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	private long userId;
+	private int userId;
 	private String title;
 	private String description;
-	@JsonFormat(pattern = "dd MMM yyyy")
+//	@JsonFormat(pattern = "dd/MM/yyyy")
 	private Date createdDate;
 	private Date modifiedDate;
 

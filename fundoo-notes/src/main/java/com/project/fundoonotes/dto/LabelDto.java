@@ -28,7 +28,7 @@ public class LabelDto {
 	private String name;
 	private LocalDate createdDate;
 	private LocalDate modifiedDate;
-    private long userId;
+    private int userId;
 
 	
 }

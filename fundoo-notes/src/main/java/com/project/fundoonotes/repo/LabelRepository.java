@@ -16,6 +16,6 @@ public interface LabelRepository extends JpaRepository<Label, Integer> {
 
 	Label save(LabelDto labelDto);
 
-	List<Label> findByUserId(long userId);
+	List<Label> findByUserId(int userId);
 
 }

@@ -61,10 +61,9 @@ public class NoteService implements INoteService {
      * implementing method to crete Note in table
      */
 	@Override
-	public Note createNote(NoteDto noteDto) {
-		Note note = null;
-		note = new Note(noteDto);
-		return noteRepository.save(note);
+	public Note createNote(Note noteDto) {
+		
+		return noteRepository.save(noteDto);
 	}
 
 }

@@ -14,8 +14,8 @@ import com.project.fundoonotes.model.Note;
 @Repository
 public interface NoteRepository extends JpaRepository<Note, Integer> {
 
-	Note save(NoteDto note);
+	Note save(Note note);
 
-	List<Note> findByUserId(long userId);
+	List<Note> findByUserId(int userId);
 
 }

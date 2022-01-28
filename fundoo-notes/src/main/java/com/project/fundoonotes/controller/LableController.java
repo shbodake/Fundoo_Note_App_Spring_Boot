@@ -71,7 +71,7 @@ public class LableController {
      * @return : ResponseEntity of Created label and Http status
      */
 	@PostMapping("/create")
-	public ResponseEntity<Response> createLabel( @RequestBody LabelDto labelDto) {
+	public ResponseEntity<Response> createLabel(@RequestBody Label labelDto) {
 		Label createLabel = null;
 		createLabel = labelService.creatLabel(labelDto);
 		Response respDTO = new Response("created Label successfully", createLabel);

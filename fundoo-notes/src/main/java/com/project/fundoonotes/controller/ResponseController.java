@@ -28,7 +28,7 @@ public class ResponseController {
      * @return : id
      */
 	@GetMapping("/getAllData/{id}")
-	public ResponseTemplateDto getLablesAndNotesByUser(@PathVariable("id") long userId) {
+	public ResponseTemplateDto getLablesAndNotesByUser(@PathVariable("id") int userId) {
 		
 		return ResponseService.getLablesAndNotesWithUser(userId);
 	}

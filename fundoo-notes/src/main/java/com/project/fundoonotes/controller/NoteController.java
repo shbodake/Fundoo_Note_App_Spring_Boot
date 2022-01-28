@@ -70,9 +70,9 @@ public class NoteController {
      * @return : ResponseEntity of Created label and Http sattus
      */
 	@PostMapping("/create")
-	public ResponseEntity<Response> createNotes( @RequestBody NoteDto noteDto) {
-		Note createNote = null;
-		createNote = noteService.createNote(noteDto);
+	public ResponseEntity<Response> createNotes( @RequestBody Note noteDto) {
+		
+		Note createNote = noteService.createNote(noteDto);  
 		Response respDTO = new Response("created Note successfully", createNote);
 		return new ResponseEntity<Response>(respDTO, HttpStatus.OK);
 	}

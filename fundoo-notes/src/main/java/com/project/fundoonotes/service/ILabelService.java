@@ -17,7 +17,7 @@ public interface ILabelService {
 	Label geLabelById(int id);
 
 
-	Label creatLabel(LabelDto labelDto);
+	Label creatLabel(Label labelDto);
 	
 	
 }

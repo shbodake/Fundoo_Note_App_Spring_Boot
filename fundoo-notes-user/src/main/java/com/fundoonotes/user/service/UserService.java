@@ -76,8 +76,17 @@ public class UserService implements IUserService {
      * implementing method to generate user in DB
      */
 	@Override
-	public User generateUser(long id) {
+	public User generateUser(long id,String token) {
 		// TODO Auto-generated method stub
-		return userRepository.findByUserId(id);
-	}
+		  if (jwtTokenUtil.isValidToken(token)){
+	            return userRepository.findByUserId(id);
+	        }
+	        else throw new UserException("Not Valid Token");
+	    }
+	@Override
+	public User getUser(long id) {
+		// TODO Auto-generated method stub
+	            return userRepository.findByUserId(id);
+	      
+	    }
 }

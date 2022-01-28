@@ -13,7 +13,7 @@ public interface INoteService {
 
 	void deletebyID(int id);
 
-	Note createNote(NoteDto noteDto);
+	Note createNote(Note noteDto);
 
 	Note updateNoteByID(int id, NoteDto noteDto);
 

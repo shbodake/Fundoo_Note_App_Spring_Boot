@@ -61,10 +61,9 @@ public class LabelService implements ILabelService {
      * implementing method to crete Label in table
      */
 	@Override
-	public Label creatLabel(LabelDto labelDto) {
-		Label label= null;
-		label = new Label(labelDto);
-		return labelRepository.save(label);
+	public Label creatLabel(Label labelDto) {
+	
+		return labelRepository.save(labelDto);
 	}
 
 	

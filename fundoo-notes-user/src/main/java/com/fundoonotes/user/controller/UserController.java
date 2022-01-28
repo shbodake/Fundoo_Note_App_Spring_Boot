@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -69,9 +70,16 @@ public class UserController {
      * @param User
      * @return : ResponseEntity of user of user-fundoonotes
      */
+	/*
+	 * @GetMapping("/getUser/{id}") public User generateUser(@PathVariable("id")
+	 * long id,@RequestHeader String token) { User userDetailUser =
+	 * userService.generateUser(id,token); //ResponseDTO responseDTO = new
+	 * ResponseDTO("Get User data", userDetailUser, HttpStatus.ACCEPTED); return
+	 * userDetailUser; }
+	 */
 	@GetMapping("/getUser/{id}")
-	public User generateUser(@PathVariable("id") long id) {
-		User userDetailUser = userService.generateUser(id);
+	public User getUser(@PathVariable("id") long id) {
+		User userDetailUser = userService.getUser(id);
 		//ResponseDTO responseDTO = new ResponseDTO("Get User data", userDetailUser, HttpStatus.ACCEPTED);
 		return userDetailUser;
 	}
@@ -82,7 +90,7 @@ public class UserController {
      * @return : ResponseEntity of update of user-fundoonotes
      */
 	@PutMapping("/update/{id}")
-	public ResponseEntity<ResponseDTO> updateUser(@PathVariable("id") long id , @RequestBody RequestDto requestDto) {
+	public ResponseEntity<ResponseDTO> updateUser(@Valid @PathVariable("id") long id , @RequestBody RequestDto requestDto) {
 		User user = userService.updateUser(id, requestDto);
 		ResponseDTO responseDTO = new ResponseDTO("Create Call Success ", user, HttpStatus.CREATED);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.CREATED);

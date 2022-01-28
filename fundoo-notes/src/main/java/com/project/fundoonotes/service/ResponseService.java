@@ -36,12 +36,12 @@ public class ResponseService implements IResponseService{
 	RestTemplate restTemplate;
 	
 	@Override
-	public ResponseTemplateDto getLablesAndNotesWithUser(long userId) {
+	public ResponseTemplateDto getLablesAndNotesWithUser(int userId) {
 		ResponseTemplateDto responseTemplateDto = new ResponseTemplateDto();
 		
 		UserDto userData=restTemplate.getForObject("http://localhost:9003/user/getUser/"+userId, UserDto.class);
 		
-		List<Label> labelList = labelRepository.findByUserId(userId);
+		List<Label> labelList = labelRepository.findByUserId(userId); 
 		List<Note> notesList = noteRepo.findByUserId(userId);
 		
 		responseTemplateDto.setUser(userData);
